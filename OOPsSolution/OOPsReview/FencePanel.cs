@@ -27,7 +27,7 @@ namespace OOPsReview
 
         // Auto Implemented property
         // This style does not need a private data member
-        // The system will create an internal data member og the rdt specified in the property definition
+        // The system will create an internal data member of the rdt specified in the property definition
 
         public double Length { get; set; }
         public double Width { get; set; }
@@ -38,6 +38,7 @@ namespace OOPsReview
         // Assuming you wish to validate your data you should be using a fully implemented property
         // for example, Height must have a positive non zero value
         // Height must not be greater than 8 ft
+
 
         private double _Height;
 
