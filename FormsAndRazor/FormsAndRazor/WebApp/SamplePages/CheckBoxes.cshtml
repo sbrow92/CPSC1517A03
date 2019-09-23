@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+    Page.Title = string.Format("Razor - {0}", "Check boxes");
+    string platformgroup = "";
+}
+@section banner
+{
+    <h1>Check Boxes on a Form</h1>
+}
+@if (true)
+{
+    //delay retrueving your data untill the page has actually been posted back
+    //IF you plan to work with this style AND you used the variable outside of the if(...)
+    //you MUST predefine the global variables in your top coding block
+    platformgroup = Request.Form["PlatformGroup"];
+    //choices will be a coma delimited list of strings siilar to array
+    if(string.IsNullOrEmpty(platformgroup))
+    {
+        <p><span style="color:firebrick">MAKE A CHOICE</span></p>
+    }
+    else
+    {
+        //use the delimiter method to split th returned strings
+        //this seperated the strings into smaller components
+        //use for each format to traverse your unknown number of choices
+<p>
+    I see you like to use the folowing platforms:
+    <ul>
+    @foreach(var platform in platformgroup.Split(','))
+    {
+        <li>@platform</li>
+    }
+    </ul>
+</p>
+    }
+
+}
+<form id="theform" method="post">
+    <div class="row">
+        <div class="offset-1">
+            <lable id="platformlbl">Select your favorite gaming platform</lable><br />
+            <input type="checkbox" id="platformgroup" name="platformgroup" value="PC" /> PC<br />
+            <input type="checkbox" id="platformgroup" name="platformgroup" value="PS4" /> PS4<br />
+            <input type="checkbox" id="platformgroup" name="platformgroup" value="XBox1" />Xbox One<br />
+            <input type="checkbox" id="platformgroup" name="platformgroup" value="Switch" />Nintendo Switch PC<br />
+            <input type="checkbox" id="platformgroup" name="platformgroup" value="Wii" /> Wii<br /> <br />
+            <button type="submit" id="thebutton" name="thebutton" value="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
