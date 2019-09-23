@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+    Page.Title = string.Format("Razor - {0}", "Basic Form");
+    var languagegroup = Request.Form["LanguageGroup"];
+    var scriptgroup = Request.Form["ScriptGroup"];
+}
+@section banner
+{
+    <h1>Radio Buttons on a Form</h1>
+}
+<form id="theform" action="/" method="post"></form>
+<div class="row">
+    <div class="offset-1">
+        <label id="LanguageGrouplbl">Select your favorite language</label></br>
+        <input type="radio" id="LanguageGroup" name="LanguageGroup" value="C#" />C#<br />
+        <input type="radio" id="LanguageGroup" name="LanguageGroup" value="VisualBasics" />Visual Basics<br />
+        <input type="radio" id="LanguageGroup" name="LanguageGroup" value="Fortran" />Fortran<br />
+        <input type="radio" id="LanguageGroup" name="LanguageGroup" value="Cobal" />Cobal<br />
+        <input type="radio" id="LanguageGroup" name="LanguageGroup" value="ObjectiveC" />Objective C<br />
+        </br></br>
+        <label id="ScriptGrouplbl">Select your favorite script group</label></br>
+        <input type="radio" id="ScriptGroup" name="ScriptGroup" value="Java" />Java<br />
+        <input type="radio" id="ScriptGroup" name="ScriptGroup" value="HTML" />HTML<br />
+        <input type="radio" id="ScriptGroup" name="ScriptGroup" value="PHP" />PHP<br />
+    </div>
+</div>
+<div class="row">
+    <div class="offset-1">
+        </br>
+        <button type="submit" id="formButton" name="formButton" value="submit" class="btn btn-primary">Submit</button>
+    </div>
+</div>
