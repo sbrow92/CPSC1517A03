@@ -1,0 +1,57 @@
+﻿@{
+   
+
+    Layout = "~/_Layout.cshtml";
+    Page.title = "Exercise 01";
+
+    var custname = Request.Form["custname"];
+    string mealitems = Request.Form["mealitems"];
+}
+@section banner
+{
+    <h1>Exercise01: Basic Form Processing</h1>
+}
+
+@if (true)
+{
+    mealitems = Request.Form["mealitems"];
+    if (string.IsNullOrEmpty(mealitems))
+    {
+        <p><span style="color:firebrick">Please Select an Option</span></p>
+    }
+    else
+    {
+        
+        <p>
+            You have selected:
+            <ul>
+                @foreach (var items in mealitems.Split(','))
+                {
+                    <li>@items</li>
+                }
+            </ul>
+        </p>
+    }
+
+}
+
+<form id="EX01" method="post">
+    <div class="row">
+        <div class="col-md-3">
+            <p>Customer Name</p>
+            <input id="custname" type="text" name="custname" value="@custname" />
+        </div>
+        <div class="col-md-9">
+            <label id="labell" for="mealitems">Choose Your Meal Items</label><br />
+            <input type="checkbox" id="mealitems" name="mealitems" value="Steak" /> Steak <br />
+            <input type="checkbox" id="mealitems" name="mealitems" value="Salmon" /> Salmon<br />
+            <input type="checkbox" id="mealitems" name="mealitems" value="Pasta" /> Pasta<br />
+            <input type="checkbox" id="mealitems" name="mealitems" value="Salad" /> Salad<br />
+        </div>
+    </div>
+    <div class="row">
+        <input type="submit" id="subbutton" name="subbutton" value="Submit" class="btn btn-primary" />
+        <input type="submit" id="resbutton" name="resbutton" value="Reset" class="btn" />
+    </div>
+
+</form>
