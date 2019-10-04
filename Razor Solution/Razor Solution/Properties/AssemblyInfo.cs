@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SBrownWebApp")]
+[assembly: AssemblyTitle("Razor_Solution")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SBrownWebApp")]
+[assembly: AssemblyProduct("Razor_Solution")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("95233ba8-5de1-43eb-b148-a55c55f4aa72")]
+[assembly: Guid("48c019fd-a396-4490-a3c4-ee94f5a5482d")]
 
 // Version information for an assembly consists of the following four values:
 //
