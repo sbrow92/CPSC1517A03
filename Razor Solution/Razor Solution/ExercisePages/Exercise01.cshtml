@@ -12,9 +12,17 @@
     <h1>Exercise01: Basic Form Processing</h1>
 }
 
-@if (true)
+@if (IsPost)
 {
+    
     mealitems = Request.Form["mealitems"];
+    var thebutton = Request.Form["thebutton"];
+
+    if (thebutton.Equals("Reset", StringComparison.OrdinalIgnoreCase))
+    {
+        custname = "";
+    }
+    else { 
     if (string.IsNullOrEmpty(mealitems))
     {
         <p><span style="color:firebrick">Please Select an Option</span></p>
@@ -32,7 +40,7 @@
             </ul>
         </p>
     }
-
+}
 }
 
 <form id="EX01" method="post">
@@ -50,8 +58,8 @@
         </div>
     </div>
     <div class="row">
-        <input type="submit" id="subbutton" name="subbutton" value="Submit" class="btn btn-primary" />
-        <input type="submit" id="resbutton" name="resbutton" value="Reset" class="btn" />
+        <input type="submit" id="thebutton" name="thebutton" value="Submit" class="btn btn-primary" />
+        <input type="submit" id="thebutton" name="thebutton" value="Reset" class="btn" />
     </div>
 
 </form>
